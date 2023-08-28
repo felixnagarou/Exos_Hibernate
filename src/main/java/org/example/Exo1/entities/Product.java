@@ -65,4 +65,16 @@ public class Product {
     public void setStock(int stock) {
         this.stock = stock;
     }
+
+    @Override
+    public String toString() {
+        return "Product{" +
+                "id=" + id +
+                ", brand='" + brand + '\'' +
+                ", reference='" + reference + '\'' +
+                ", purchaseDate=" + purchaseDate +
+                ", price=" + price +
+                ", stock=" + stock +
+                '}';
+    }
 }
