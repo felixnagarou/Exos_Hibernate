@@ -40,6 +40,15 @@ public class IHM {
 
         public List<Product> displayProductsGivenMaxPriceThreshold (double price){
             price = scanner.nextDouble();
+            Query<Product> productQuery = session.createQuery("from Product where stock  < ?0");
+            productQuery.setParameter(0, price);
+
+
+            Iterator<Product> productIterator = productQuery.iterate();
+            while (productIterator.hasNext()){
+                Product p = (Product) productIterator.next();
+                System.out.println(p.getBrand());
+            }
             List<Product> productList = new ArrayList<>();
 
             return productList;
